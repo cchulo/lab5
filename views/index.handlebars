@@ -13,7 +13,14 @@
 <body>
 	<div class="container">
 		<h1>My HCI Friends</h1>
-
+		 {{#each friends}}
+		<div class="friend">
+			<image class="img-responsive img-rounded" src={{imageURL}}></image>
+			<a><h3>{{name}}</h3></a>
+			<p>{{description}}</p>
+			<hr>
+		</div>
+		{{/each}}
 		<form id="addFriendForm" role="form" method="get" action="/add">
 			<h3>Add a friend</h3>
 			<div class="form-group">
@@ -26,6 +33,7 @@
 			</div>
 			<input type="submit" id="submitBtn" class="btn btn-default" value="Add the friend"></input>
 		</form>
+		
 		<script src="js/jquery-1.11.0.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<script src="js/hci-friends.js"></script>
